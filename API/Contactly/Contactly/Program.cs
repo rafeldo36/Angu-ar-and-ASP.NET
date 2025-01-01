@@ -31,6 +31,11 @@ if (builder.Environment.IsDevelopment())
 //app.MapGet("/", () => "Welcome to the API!");
 app.UseHttpsRedirection();
 
+app.UseCors(policy => policy
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowAnyOrigin()); 
+
 app.UseAuthorization();
 
 app.MapControllers();
